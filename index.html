@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD. BAYZED MATUBBAR - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            min-height: 200px;
+        }
+
+        .header-content {
+            flex: 1;
+            padding-right: 180px;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .contact-info i {
+            margin-right: 8px;
+            width: 20px;
+        }
+
+        /* Profile Image */
+        .profile-image-container {
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            object-fit: cover;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .theme-toggle {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #themeBtn {
+            background-color: #ffd166;
+            color: #333;
+        }
+
+        #downloadBtn {
+            background-color: #06d6a0;
+            color: white;
+        }
+
+        #printBtn {
+            background-color: #118ab2;
+            color: white;
+        }
+
+        /* Sections */
+        .section {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #06d6a0;
+            padding-bottom: 10px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: #f8f9fa;
+            border-left: 5px solid #118ab2;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-item h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .education-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 1rem;
+        }
+
+        .detail-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .detail-item .label {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .detail-item .value {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .detail-item .value-bracket {
+            
+            font-weight: 600;
+        }
+
+        .gpa-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #06d6a0, #118ab2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .gpa-badge.hsc {
+            background: linear-gradient(135deg, #ff9a00, #ff6b6b);
+        }
+
+        .gpa-badge.ssc {
+            background: linear-gradient(135deg, #9d4edd, #560bad);
+        }
+
+        /* Personal Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 1rem;
+        }
+
+        .info-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .info-item .label {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-item .value {
+            color: #2c3e50;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .info-item .value-bracket {
+            color: #06d6a0;
+            font-weight: 600;
+            
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 2px 0;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .skill {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #06d6a0, #118ab2);
+            border-radius: 5px;
+        }
+
+        /* Experiences */
+        .experience-list {
+            list-style-type: none;
+        }
+
+        .experience-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .experience-list li:last-child {
+            border-bottom: none;
+        }
+
+        .experience-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #06d6a0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .experience-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #118ab2;
+        }
+
+        .experience-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #118ab2;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background-color: #cce7ff;
+            color: #118ab2;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            background: #2c3e50;
+            color: white;
+            border-radius: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #06d6a0;
+        }
+
+        .copyright {
+            opacity: 0.8;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .section {
+            background-color: #1e1e1e;
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .section h2 {
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .project-card,
+        body.dark-mode .experience-card,
+        body.dark-mode .education-item,
+        body.dark-mode .info-item,
+        body.dark-mode .detail-item {
+            background-color: #2a2a2a;
+            border-color: #333;
+        }
+
+        body.dark-mode .progress-bar {
+            background-color: #333;
+        }
+
+        body.dark-mode .tech-tag {
+            background-color: #2a4365;
+            color: #90cdf4;
+        }
+
+        body.dark-mode .experience-list li {
+            border-bottom-color: #333;
+        }
+
+        body.dark-mode .detail-item .label,
+        body.dark-mode .info-item .label {
+            color: #aaa;
+        }
+
+        body.dark-mode .detail-item .value,
+        body.dark-mode .info-item .value {
+            color: #f0f0f0;
+        }
+
+        body.dark-mode .value-bracket {
+            background: #1a3c2e;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            header {
+                flex-direction: column;
+                text-align: left;
+                padding-bottom: 120px;
+            }
+            
+            .header-content {
+                padding-right: 0;
+            }
+            
+            .profile-image-container {
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+                margin: 1rem auto;
+            }
+            
+            .theme-toggle {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .project-grid,
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .education-details,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Animations */
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
+        .section:nth-child(5) { animation-delay: 0.4s; }
+        .section:nth-child(6) { animation-delay: 0.5s; }
+        .section:nth-child(7) { animation-delay: 0.6s; }
+
+        /* Badge */
+        .blood-badge {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Bracket Style */
+        .bracket {
+            color: #06d6a0;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section with Image -->
+        <header>
+            <div class="header-content">
+                <h1>MD. BAYZED MATUBBAR</h1>
+                <p class="tagline">Technical Specialist | Electrical & CCTV Expert</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> mdbayzedhasanzubo6@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> 01956057582</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Village-Godara, Post-Fakirbari, Upzila-Morrelganj, District-Bagerhat</p>
+                </div>
+                
+                <div class="theme-toggle">
+                    <button id="themeBtn"><i class="fas fa-moon"></i> Dark Mode</button>
+                    <button id="downloadBtn"><i class="fas fa-download"></i> Download PDF</button>
+                    <button id="printBtn"><i class="fas fa-print"></i> Print CV</button>
+                </div>
+            </div>
+
+            <!-- Profile Image -->
+            <div class="profile-image-container">
+                <div class="profile-image" id="profileImage">
+                    <img src="https://i.ibb.co.com/twPn3Vng/IMG-20260127-WA0003.jpg" alt="MD. BAYZED MATUBBAR">
+                </div>
+            </div>
+        </header>
+
+        <!-- Personal Information Section -->
+        <section class="section">
+            <h2><i class="fas fa-user-circle"></i> Personal Information</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="label"><i class="fas fa-user-friends"></i> Father's Name</div>
+                    <div class="value">
+                        <span class="value-bracket">Nur Islam Matubbar</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="label"><i class="fas fa-user-friends"></i> Mother's Name</div>
+                    <div class="value">
+                        <span class="value-bracket">Mst. Rabeya Akter Baby</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="label"><i class="fas fa-home"></i> Address</div>
+                    <div class="value">
+                        <span class="value-bracket">Village-Godara, Post-Fakirbari, Upzila-Morrelganj, District-Bagerhat</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="label"><i class="fas fa-id-card"></i> NID No</div>
+                    <div class="value">
+                        <span class="value-bracket">4658641834</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="label"><i class="fas fa-birthday-cake"></i> Date of Birth</div>
+                    <div class="value">
+                        <span class="value-bracket">15 October 2003</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="label"><i class="fas fa-tint"></i> Blood Group</div>
+                    <div class="value">
+                        <span class="blood-badge">B+</span>
+                        <span class="value-bracket">B Positive</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="label"><i class="fas fa-venus-mars"></i> Gender</div>
+                    <div class="value">
+                        <span class="value-bracket">Male</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="label"><i class="fas fa-flag"></i> Nationality</div>
+                    <div class="value">
+                        <span class="value-bracket">Bangladeshi</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="label"><i class="fas fa-ruler-vertical"></i> Height</div>
+                    <div class="value">
+                        <span class="value-bracket">5.7 inch</span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Educational Qualifications</h2>
+            
+            <!-- HSC -->
+            <div class="education-item">
+                <h3><i class="fas fa-university"></i> Higher Secondary Certificate (HSC)</h3>
+                <div class="education-details">
+                    <div class="detail-item">
+                        <div class="label">Examination</div>
+                        <div class="value-bracket">HSC (Technical)</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">Board</div>
+                        <div class="value-bracket">Technical Education Board, Dhaka</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">Passing Year</div>
+                        <div class="value-bracket">2025</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">Roll Number</div>
+                        <div class="value-bracket">550899</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">Registration No</div>
+                        <div class="value-bracket">4400288880</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">Result/GPA</div>
+                        <div class="value-bracket">GPA: 4.00</div>
+                    </div>
+                </div>
+                <div class="gpa-badge hsc">
+                    <i class="fas fa-medal"></i> Excellent Result: GPA 4.00
+                </div>
+            </div>
+
+            <!-- SSC -->
+            <div class="education-item">
+                <h3><i class="fas fa-school"></i> Secondary School Certificate (SSC)</h3>
+                <div class="education-details">
+                    <div class="detail-item">
+                        <div class="label">Examination</div>
+                        <div class="value-bracket">SSC (Technical)</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">Board</div>
+                        <div class="value-bracket">Technical Education Board, Dhaka</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">Passing Year</div>
+                        <div class="value-bracket">2022</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">Roll Number</div>
+                        <div class="value-bracket">270039</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">Registration No</div>
+                        <div class="value-bracket">2700201253</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">Result/GPA</div>
+                        <div class="value-bracket">GPA: 4.18</div>
+                    </div>
+                </div>
+                <div class="gpa-badge ssc">
+                    <i class="fas fa-trophy"></i> Outstanding GPA: 4.18
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="section">
+            <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3><i class="fas fa-bolt"></i> Electrical & Technical</h3>
+                    <ul class="experience-list">
+                        <li>Electrics House Wiring</li>
+                        <li>CCTV Camera Installation</li>
+                        <li>Akash Digital TV Setup</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3><i class="fas fa-motorcycle"></i> Delivery Service</h3>
+                    <ul class="experience-list">
+                        <li>Rider - Steadfast Courier Service</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3><i class="fas fa-shield-alt"></i> Training & Others</h3>
+                    <ul class="experience-list">
+                        <li>Bangladesh Ansar BDP Training (21 days)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2><i class="fas fa-laptop-code"></i> Technical Skills</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3><i class="fas fa-desktop"></i> Computer Skills</h3>
+                    <ul class="experience-list">
+                        <li>MS Office (Word, Excel, PowerPoint)</li>
+                        <li>Internet & Email Browsing</li>
+                        <li>Basic Computer Operation</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3><i class="fas fa-tools"></i> Technical Expertise</h3>
+                    <ul class="experience-list">
+                        <li>Electrical Systems Installation</li>
+                        <li>CCTV & Security Systems</li>
+                        <li>Digital TV Setup</li>
+                        <li>Technical Troubleshooting</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin-top: 1.5rem;">
+                <h3><i class="fas fa-chart-line"></i> Skill Proficiency</h3>
+                <div class="skills-container" style="margin-top: 1rem;">
+                    <div class="skill">
+                        <span class="skill-name">Electrical Installation <span>90%</span></span>
+                        <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">CCTV Installation <span>85%</span></span>
+                        <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">MS Office <span>80%</span></span>
+                        <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">Technical Troubleshooting <span>88%</span></span>
+                        <div class="progress-bar"><div class="progress" style="width: 88%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section">
+            <h2><i class="fas fa-project-diagram"></i> Projects & Training</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3><i class="fas fa-home"></i> Residential Electrical Wiring</h3>
+                    <p>Completed multiple residential electrical wiring projects with proper safety standards and efficient power distribution.</p>
+                    <span class="tech-tag">Electrical</span>
+                    <span class="tech-tag">Safety</span>
+                    <span class="tech-tag">Installation</span>
+                </div>
+                <div class="project-card">
+                    <h3><i class="fas fa-video"></i> CCTV Security System</h3>
+                    <p>Installed and configured complete CCTV surveillance systems for residential and commercial properties.</p>
+                    <span class="tech-tag">CCTV</span>
+                    <span class="tech-tag">Security</span>
+                    <span class="tech-tag">Configuration</span>
+                </div>
+                <div class="project-card">
+                    <h3><i class="fas fa-shield-alt"></i> Ansar BDP Training</h3>
+                    <p>Successfully completed 21-day intensive training program with Bangladesh Ansar BDP, focusing on discipline and security protocols.</p>
+                    <span class="tech-tag">Training</span>
+                    <span class="tech-tag">Security</span>
+                    <span class="tech-tag">Discipline</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="section">
+            <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+            <form id="contactForm" style="margin-top: 1rem;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <input type="text" placeholder="Your Name" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Poppins'; font-size: 1rem;">
+                    <input type="email" placeholder="Your Email" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Poppins'; font-size: 1rem;">
+                </div>
+                <textarea placeholder="Your Message" rows="4" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; font-family: 'Poppins'; font-size: 1rem;"></textarea>
+                <button type="submit" style="background: linear-gradient(135deg, #2c3e50, #4a6491); color: white; padding: 12px 30px; font-size: 1rem;">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="social-links">
+                <a href="mailto:mdbayzedhasanzubo6@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="tel:+8801956057582"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+            <p class="copyright">© 2023 MD. BAYZED MATUBBAR. All rights reserved.</p>
+           
+        </footer>
+    </div>
+
+    <script>
+        // Dark/Light Mode Toggle
+        const themeBtn = document.getElementById('themeBtn');
+        const icon = themeBtn.querySelector('i');
+
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                icon.className = 'fas fa-sun';
+                themeBtn.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.className = 'fas fa-moon';
+                themeBtn.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Check saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            icon.className = 'fas fa-sun';
+            themeBtn.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+        }
+
+        // PDF Download Button
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            window.print();
+        });
+
+        // Print Button
+        document.getElementById('printBtn').addEventListener('click', () => {
+            window.print();
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will contact you soon.');
+            this.reset();
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add current year to footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const year = new Date().getFullYear();
+            const copyrightElement = document.querySelector('.copyright');
+            if (copyrightElement) {
+                copyrightElement.innerHTML = copyrightElement.innerHTML.replace('2023', year);
+            }
+            
+            // Update last updated date
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                          'July', 'August', 'September', 'October', 'November', 'December'];
+            const now = new Date();
+            const lastUpdated = document.querySelector('p:nth-child(4)');
+            if (lastUpdated) {
+                lastUpdated.innerHTML = `Last Updated: ${months[now.getMonth()]} ${now.getFullYear()} | CV Version 5.0 | Mobile: <span class="bracket">[01956057582]</span>`;
+            }
+        });
+    </script>
+</body>
+</html>
